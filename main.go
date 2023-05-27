@@ -8,12 +8,16 @@ import (
 func main() {
 	regex := eval.MakeRegApp(
 		[]eval.RegExp{
-			eval.MakeRegChar("h"),
-			eval.MakeRegChar("h"),
-			eval.MakeRegChar("h"),
-			eval.MakeRegChar("g"),
+			eval.MakeRegChar("a"),
+			eval.MakeRegStar(
+				eval.MakeRegUnion(
+					eval.MakeRegChar("a"),
+					eval.MakeRegChar("b"),
+				),
+			),
 		},
 	)
-	input := "hhhg"
-	fmt.Printf("regex.match(&input): %v\n", regex.Match(&input))
+
+	input := "aaaaaa"
+	fmt.Printf("regex.Match(&input): %v\n", regex.Match(&input))
 }
