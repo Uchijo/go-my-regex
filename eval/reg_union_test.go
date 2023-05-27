@@ -2,7 +2,7 @@ package eval
 
 import "testing"
 
-func TestRegApp(t *testing.T) {
+func TestRegUnion(t *testing.T) {
 	tests := []struct {
 		name  string
 		left  RegExp
