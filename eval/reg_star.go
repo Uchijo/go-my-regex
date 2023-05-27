@@ -25,7 +25,7 @@ func (rs RegStar) Match(s *string) bool {
 			ss := cs[:i]
 			if rs.subject.Match(&ss) {
 				cs = cs[i:]
-				break;
+				break
 			}
 		}
 	}
