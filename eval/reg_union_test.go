@@ -4,7 +4,7 @@ import "testing"
 
 func TestRegApp(t *testing.T) {
 	tests := []struct {
-		name string
+		name  string
 		left  RegExp
 		right RegExp
 		input string
@@ -41,7 +41,7 @@ func TestRegApp(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			regex := MakeRegUnion(tt.left, tt.right);
+			regex := MakeRegUnion(tt.left, tt.right)
 			got := regex.Match(&tt.input)
 			if got != tt.want {
 				t.Errorf("expected %v, but got %v", tt.want, got)
